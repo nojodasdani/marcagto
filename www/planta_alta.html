@@ -1,0 +1,40 @@
+<html><head>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+<script type="text/javascript" src="js/my-app.js"></script>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.panzoom.min.js"></script>
+</head><body>
+  <!--<img class="imageWithZoom" src="img/planta_alta.png" width="100%">
+<script>
+$(document).ready(function() {
+  $(".imageWithZoom").panzoom();
+});
+</script>
+-->
+<section id="pan-when-zoomed2">
+  <div class="buttons">
+    <button class="zoom-in2">+</button>
+    <button class="zoom-out2">−</button>
+  </div>
+      <div class="parent">
+        <div class="panzoom2">
+          <img src="img/mapa/planta_alta.png">
+        </div>
+      </div>
+      <script>
+        (function() {
+          var sectiontwo = $('#pan-when-zoomed2');
+          sectiontwo.find('.panzoom2').panzoom({
+            $zoomIn: sectiontwo.find(".zoom-in2"),
+            $zoomOut: sectiontwo.find(".zoom-out2"),
+            minScale: 1
+          });
+
+          sectiontwo.on('panzoomzoom', function(e, panzoom, scale) {
+            myApp.alert(scale)
+          });
+        })();
+      </script>
+    </section>
+</body>

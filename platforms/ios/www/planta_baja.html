@@ -1,0 +1,33 @@
+<html><head>
+  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+
+  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery.panzoom.min.js"></script>
+</head><body>
+<section id="pan-when-zoomed">
+  <div class="buttons">
+    <button class="zoom-in">+</button>
+    <button class="zoom-out">−</button>
+  </div>
+      <div class="parent">
+        <div class="panzoom">
+          <img src="img/mapa/planta_baja.png">
+        </div>
+      </div>
+      <script>
+        (function() {
+          var $section = $('#pan-when-zoomed');
+          $section.find('.panzoom').panzoom({
+            $zoomIn: $section.find(".zoom-in"),
+            $zoomOut: $section.find(".zoom-out"),
+            minScale: 1
+          });
+
+          $section.on('panzoomzoom', function(e, panzoom, scale) {
+            myApp.alert(scale)
+          });
+        })();
+      </script>
+    </section>
+</body>
