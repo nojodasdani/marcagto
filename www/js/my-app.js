@@ -1,11 +1,4 @@
-// Initialize app
-var myApp = new Framework7({
-  init: false
-  }
-);
-
-
-// If we need to use custom DOM library, let's save it to $$ variable:
+var myApp = new Framework7();
 var $$ = Dom7;
 
 // Add view
@@ -16,7 +9,9 @@ var mainView = myApp.addView('.view-main', {
 
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
-    console.log("Device is ready!");
+    //console.log("Device is ready!");
+    checkPermissions();
+    checkBluetooth();
 });
 
 myApp.onPageInit('premios', function (page) {
@@ -52,6 +47,7 @@ myApp.onPageInit('premios', function (page) {
       },
       beforeSend: function() {
         $$("#myform").hide();
+        $$("#headerPremios").hide();
         $$("#body").append("<div id='loading' class='content-block' style='text-align: center'><span style='width:42px; height:42px' class='preloader'></span><h4>Espera por favor...</h4></div>");
       },
       success: function(response) {
@@ -64,6 +60,7 @@ myApp.onPageInit('premios', function (page) {
       complete: function() {
         $$("#loading").remove();
         $$("#myform").show();
+        $$("#headerPremios").show();
       }
     });
   });
@@ -117,8 +114,7 @@ myApp.onPageInit('mapa', function (page) {
   });
 })
 
-myApp.onPageInit('index', function (page) {
-  checkPermissions();
+function checkBluetooth(){
   cordova.plugins.diagnostic.isBluetoothEnabled(function(enabled){
     if (!enabled) {
       myApp.confirm('¿Podemos encender tu Bluetooth?', '', function () {
@@ -129,28 +125,13 @@ myApp.onPageInit('index', function (page) {
   }, function(error){
     myApp.alert('Ocurrió el error: '+ error);
   });
-})
-
-$$(document).on('pageInit', function (e) {
-    var page = e.detail.page;
-    checkPermissions();
-    cordova.plugins.diagnostic.isBluetoothEnabled(function(enabled){
-      if (!enabled) {
-        myApp.confirm('¿Podemos encender tu Bluetooth?', '', function () {
-          turnBluetooth();
-          }, function () {}
-        );
-      }
-    }, function(error){
-      myApp.alert('Ocurrió el error: '+ error);
-    });
-});
+}
 
 function turnBluetooth(){
   cordova.plugins.diagnostic.setBluetoothState(function(){
       //console.log("Bluetooth was enabled");
   }, function(error){
-      myApp.alert("Ocurrió el error: "+ error);
+      myApp.alert("Ocurrió un error, enciéndelo manualmente por favor");
   }, true);
 }
 
@@ -175,5 +156,3 @@ function success(status) {
     error();
   }
 }
-
-myApp.init();
