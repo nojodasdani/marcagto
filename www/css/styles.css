@@ -10,12 +10,17 @@
    See https://github.com/apache/cordova-plugin-statusbar
 */
 
+.toolbar{
+  height: 60px !important;
+}
+
+
 .statusbar-overlay {
     background: #000000;
 }
 
 .fullwidth{
-  width:100%;  
+  width:100%;
 }
 
 .botonmenu{
@@ -62,10 +67,17 @@
 }
 
 .imageWrapper3{
-  width:auto;
-  height:100%;
-  max-height:215px;
+  width: 100%;
+  height: auto;
+  max-width: 52px;
 }
+
+.imageWrapper4{
+  width: 91%;
+  height: auto;
+  max-width: 52px;
+}
+
 
 .botones{
   padding: 5px;
@@ -86,4 +98,16 @@
 .inactivo{
   background-color: white;
   color: black;
+}
+
+@media screen and (min-width: 550px) {
+    #margenMapa {
+        margin-top:43%
+    }
+}
+
+@media screen and (max-width: 549px) {
+    #margenMapa {
+        margin-top:115%
+    }
 }

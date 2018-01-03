@@ -16,7 +16,8 @@
             <!-- Page, "data-page" contains page name -->
             <div data-page="contacto" class="page no-toolbar">
                 <!-- Scrollable page content -->
-                <div class="page-content">
+                <div class="page-content" id="body">
+                  <form id="myform" action="#" method="POST">
                     <div class="list-block inset">
                     <ul>
                       <li>
@@ -24,7 +25,7 @@
                           <div class="item-inner">
                             <div class="item-title label">Nombre</div>
                             <div class="item-input">
-                              <input type="text" name="nombre" placeholder="Tu nombre">
+                              <input type="text" name="nombre" placeholder="Tu nombre" id="nombre" required>
                             </div>
                           </div>
                         </div>
@@ -34,7 +35,7 @@
                           <div class="item-inner">
                             <div class="item-title label">Correo</div>
                             <div class="item-input">
-                              <input type="email" name="correo" placeholder="Tu correo">
+                              <input type="email" name="correo" placeholder="Tu correo" id="correo" required>
                             </div>
                           </div>
                         </div>
@@ -44,7 +45,7 @@
                           <div class="item-inner">
                             <div class="item-title label">Asunto</div>
                             <div class="item-input">
-                              <input type="text" name="asunto" placeholder="Asunto">
+                              <input type="text" name="asunto" placeholder="Asunto" id="asunto" required>
                             </div>
                           </div>
                         </div>
@@ -54,18 +55,17 @@
                           <div class="item-inner">
                             <div class="item-title label">Mensaje</div>
                             <div class="item-input">
-                              <textarea class="resizable" name="mensaje" placeholder="Mensaje"></textarea>
+                              <textarea class="resizable" name="mensaje" placeholder="Mensaje" id="mensaje" required></textarea>
                             </div>
                           </div>
                         </div>
                       </li>
                     </ul>
-
-                    <!--<p><a href="#" class="button button-round button-fill color-gray">Enviar</a></p>-->
                     <p class="buttons-row">
-                      <a href="#" class="button button-big button-fill button-raised color-teal">Enviar</a>
+                      <button type="submit" class="button button-big button-fill button-raised color-teal">Enviar</a>
                     </p>
                   </div>
+                </form>
             </div>
           </div>
 </div>

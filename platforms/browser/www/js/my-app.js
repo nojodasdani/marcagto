@@ -1,5 +1,8 @@
 // Initialize app
-var myApp = new Framework7();
+var myApp = new Framework7({
+  init: false
+  }
+);
 
 
 // If we need to use custom DOM library, let's save it to $$ variable:
@@ -21,7 +24,10 @@ myApp.onPageInit('premios', function (page) {
       dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'],
       monthNames:	['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto' , 'Septiembre' , 'Octubre', 'Noviembre', 'Diciembre'],
       input: '#calendar-date-format',
-      dateFormat: 'dd/mm/yyyy'
+      minDate:'1940-01-01',
+      maxDate:'2012-01-01',
+      value: ['1990-01-02'],
+      dateFormat: 'dd-MM-yyyy'
   });
 
   $$("#myform").submit(function(e) {
@@ -45,18 +51,50 @@ myApp.onPageInit('premios', function (page) {
         data: datos
       },
       beforeSend: function() {
-        $$("button").attr("disabled", "disabled");
-        $$("#body").append("<div id='loading' class='content-block' style='text-align: center'><span style='width:42px; height:42px' class='preloader'></span></div>");
+        $$("#myform").hide();
+        $$("#body").append("<div id='loading' class='content-block' style='text-align: center'><span style='width:42px; height:42px' class='preloader'></span><h4>Espera por favor...</h4></div>");
       },
       success: function(response) {
-        myApp.alert("Te suscribiste exitosamente", "MarcaGto")
+        myApp.alert("Te suscribiste exitosamente", "MarcaGto");
+        $$("#myform")[0].reset();
+      },
+      error: function(error) {
+        myApp.alert("Ocurrió un error, intenta de nuevo", "MarcaGto");
+      },
+      complete: function() {
+        $$("#loading").remove();
+        $$("#myform").show();
+      }
+    });
+  });
+});
+
+myApp.onPageInit('contacto', function (page) {
+  $$("#myform").submit(function(e) {
+    e.preventDefault();
+    var datos = [];
+    datos.push($$("#nombre").val(), $$("#correo").val(), $$("#asunto").val(), $$("#mensaje").val());
+    $$.ajax({
+      type: "POST",
+      url: "http://apps.opion-tech.com/correoGto.php",
+      contentType: "application/x-www-form-urlencoded",
+      data: {
+        data: datos
+      },
+      beforeSend: function() {
+        $$("#myform").hide();
+        $$("#body").append("<div id='loading' class='content-block' style='text-align: center'><span style='width:42px; height:42px' class='preloader'></span><h4>Espera por favor...</h4></div>");
+      },
+      success: function(response) {
+        myApp.alert("El correo se envió exitosamente", "MarcaGto");
+        $$("#myform")[0].reset();
       },
       error: function(error) {
         myApp.alert("Ocurrió un error, intenta de nuevo", "MarcaGto")
       },
       complete: function() {
         $$("#loading").remove();
-        $$("button").removeAttr("disabled");
+        $$("#myform").show();
       }
     });
   });
@@ -79,10 +117,42 @@ myApp.onPageInit('mapa', function (page) {
   });
 })
 
+myApp.onPageInit('index', function (page) {
+  checkPermissions();
+  cordova.plugins.diagnostic.isBluetoothEnabled(function(enabled){
+    if (!enabled) {
+      myApp.confirm('¿Podemos encender tu Bluetooth?', '', function () {
+        turnBluetooth();
+        }, function () {}
+      );
+    }
+  }, function(error){
+    myApp.alert('Ocurrió el error: '+ error);
+  });
+})
+
 $$(document).on('pageInit', function (e) {
     var page = e.detail.page;
     checkPermissions();
+    cordova.plugins.diagnostic.isBluetoothEnabled(function(enabled){
+      if (!enabled) {
+        myApp.confirm('¿Podemos encender tu Bluetooth?', '', function () {
+          turnBluetooth();
+          }, function () {}
+        );
+      }
+    }, function(error){
+      myApp.alert('Ocurrió el error: '+ error);
+    });
 });
+
+function turnBluetooth(){
+  cordova.plugins.diagnostic.setBluetoothState(function(){
+      //console.log("Bluetooth was enabled");
+  }, function(error){
+      myApp.alert("Ocurrió el error: "+ error);
+  }, true);
+}
 
 function checkPermissions(){
   var permissions = cordova.plugins.permissions;
@@ -105,3 +175,5 @@ function success(status) {
     error();
   }
 }
+
+myApp.init();

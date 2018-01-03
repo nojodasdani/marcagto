@@ -30,6 +30,12 @@
               "xml": "<feature name=\"MOCAPlugin\"><param name=\"android-package\" value=\"com.innoquant.moca.phonegap.MOCAPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
               "count": 1
             }
+          ],
+          "/*": [
+            {
+              "xml": "<feature name=\"Diagnostic\"><param name=\"android-package\" value=\"cordova.plugins.Diagnostic\" /><param name=\"onload\" value=\"true\" /></feature>",
+              "count": 1
+            }
           ]
         }
       },
@@ -129,6 +135,14 @@
             {
               "xml": "<meta-data android:name=\"com.google.android.gms.version\" android:value=\"@integer/google_play_services_version\" />",
               "count": 1
+            },
+            {
+              "xml": "<receiver android:name=\"cordova.plugins.Diagnostic$LocationProviderChangedReceiver\"><intent-filter><action android:name=\"android.location.PROVIDERS_CHANGED\" /></intent-filter></receiver>",
+              "count": 1
+            },
+            {
+              "xml": "<receiver android:name=\"cordova.plugins.Diagnostic$NFCStateChangedReceiver\"><intent-filter><action android:name=\"android.nfc.action.ADAPTER_STATE_CHANGED\" /></intent-filter></receiver>",
+              "count": 1
             }
           ]
         }
@@ -150,6 +164,9 @@
     },
     "cordova-plugin-android-permissions": {
       "PACKAGE_NAME": "com.phonegap.helloworld"
+    },
+    "cordova.plugins.diagnostic": {
+      "PACKAGE_NAME": "com.proxtopic.marcagto"
     }
   },
   "dependent_plugins": {},
@@ -177,6 +194,14 @@
       "clobbers": [
         "cordova.plugins.permissions"
       ]
+    },
+    {
+      "id": "cordova.plugins.diagnostic.Diagnostic",
+      "file": "plugins/cordova.plugins.diagnostic/www/android/diagnostic.js",
+      "pluginId": "cordova.plugins.diagnostic",
+      "clobbers": [
+        "cordova.plugins.diagnostic"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -184,6 +209,7 @@
     "cordova-plugin-statusbar": "1.0.1",
     "cordova-plugin-whitelist": "1.2.2",
     "com.innoquant.moca.phonegap": "2.6.2",
-    "cordova-plugin-android-permissions": "1.0.0"
+    "cordova-plugin-android-permissions": "1.0.0",
+    "cordova.plugins.diagnostic": "3.8.1"
   }
 }
