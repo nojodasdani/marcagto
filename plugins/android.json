@@ -24,6 +24,9 @@
     },
     "cordova.plugins.diagnostic": {
       "PACKAGE_NAME": "com.proxtopic.marcagto"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.proxtopic.marcagto"
     }
   },
   "dependent_plugins": {}

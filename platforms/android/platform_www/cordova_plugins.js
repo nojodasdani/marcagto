@@ -31,6 +31,20 @@ module.exports = [
     "clobbers": [
       "cordova.plugins.diagnostic"
     ]
+  },
+  {
+    "id": "cordova-plugin-geolocation.geolocation",
+    "file": "plugins/cordova-plugin-geolocation/www/android/geolocation.js",
+    "pluginId": "cordova-plugin-geolocation",
+    "clobbers": [
+      "navigator.geolocation"
+    ]
+  },
+  {
+    "id": "cordova-plugin-geolocation.PositionError",
+    "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
+    "pluginId": "cordova-plugin-geolocation",
+    "runs": true
   }
 ];
 module.exports.metadata = 
@@ -41,7 +55,8 @@ module.exports.metadata =
   "cordova-plugin-whitelist": "1.2.2",
   "com.innoquant.moca.phonegap": "2.6.2",
   "cordova-plugin-android-permissions": "1.0.0",
-  "cordova.plugins.diagnostic": "3.8.1"
+  "cordova.plugins.diagnostic": "3.8.1",
+  "cordova-plugin-geolocation": "4.0.1"
 };
 // BOTTOM OF METADATA
 });

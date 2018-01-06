@@ -22,6 +22,7 @@
     "cordova-ios": "~4.5.4",
     "cordova-plugin-android-permissions": "~1.0.0",
     "cordova-plugin-console": "~1.0.1",
+    "cordova-plugin-geolocation": "^4.0.1",
     "cordova-plugin-statusbar": "~1.0.1",
     "cordova-plugin-whitelist": "~1.2.0",
     "cordova.plugins.diagnostic": "~3.8.1"
