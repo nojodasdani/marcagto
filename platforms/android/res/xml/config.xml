@@ -1,15 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.proxtopic.marcagto" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <feature name="StatusBar">
-        <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
-        <param name="onload" value="true" />
-    </feature>
+<widget id="com.proxtopic.marcagto" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <feature name="Whitelist">
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
     <feature name="Permissions">
         <param name="android-package" value="com.android.plugins.Permissions" />
+    </feature>
+    <feature name="Geolocation">
+        <param name="android-package" value="org.apache.cordova.geolocation.Geolocation" />
     </feature>
     <feature name="MOCAPlugin">
         <param name="android-package" value="com.innoquant.moca.phonegap.MOCAPlugin" />
@@ -21,10 +20,10 @@
     </feature>
     <name>MarcaGto</name>
     <description>
-      Aplicación para MarcaGto.
+        A sample Apache Cordova application that responds to the deviceready event.
     </description>
-    <author email="daniel@opion-tech.com" href="opion-tech.com">
-        Daniel Enríquez Barrera
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
     </author>
     <icon src="www/img/icon.png" />
     <content src="index.html" />
@@ -37,10 +36,6 @@
     <allow-intent href="geo:*" />
     <allow-intent href="market:*" />
     <preference name="loglevel" value="DEBUG" />
-    <preference name="DisallowOverscroll" value="true" />
     <preference name="moca_app_key" value="zhh32fxpRquqwh_jeXTkBQ" />
     <preference name="moca_app_secret" value="R1SHnh4wp0m3Oj5Yyz5j8QZ2x1Y=" />
-    <feature name="Geolocation">
-        <param name="android-package" value="org.apache.cordova.geolocation.Geolocation" />
-    </feature>
 </widget>

@@ -7,26 +7,24 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-console": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
-    },
-    "cordova-plugin-statusbar": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
-    },
     "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "com.example.hello"
     },
     "com.innoquant.moca.phonegap": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
+      "PACKAGE_NAME": "com.example.hello"
+    },
+    "cordova-android-play-services-gradle-release": {
+      "PLAY_SERVICES_VERSION": "11.+",
+      "PACKAGE_NAME": "com.example.hello"
     },
     "cordova-plugin-android-permissions": {
-      "PACKAGE_NAME": "com.phonegap.helloworld"
-    },
-    "cordova.plugins.diagnostic": {
-      "PACKAGE_NAME": "com.proxtopic.marcagto"
+      "PACKAGE_NAME": "com.example.hello"
     },
     "cordova-plugin-geolocation": {
-      "PACKAGE_NAME": "com.proxtopic.marcagto"
+      "PACKAGE_NAME": "com.example.hello"
+    },
+    "cordova.plugins.diagnostic": {
+      "PACKAGE_NAME": "com.proxtopic.ferialeon"
     }
   },
   "dependent_plugins": {}

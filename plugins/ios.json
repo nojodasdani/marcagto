@@ -1,0 +1,30 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "com.innoquant.moca.phonegap": {
+      "PACKAGE_NAME": "com.proxtopic.ferialeon"
+    },
+    "cordova-android-play-services-gradle-release": {
+      "PACKAGE_NAME": "com.proxtopic.ferialeon"
+    },
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "com.proxtopic.ferialeon"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.proxtopic.ferialeon"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.proxtopic.ferialeon"
+    },
+    "cordova.plugins.diagnostic": {
+      "PACKAGE_NAME": "com.proxtopic.ferialeon"
+    }
+  },
+  "dependent_plugins": {}
+}

@@ -92,7 +92,8 @@ ext {
 }
 
 // PLUGIN GRADLE EXTENSIONS START
-apply from: "com.innoquant.moca.phonegap/helloworld-mocabuild.gradle"
+apply from: "com.innoquant.moca.phonegap/hello-mocabuild.gradle"
+apply from: "cordova-android-play-services-gradle-release/hello-cordova-android-play-services-gradle-release.gradle"
 // PLUGIN GRADLE EXTENSIONS END
 
 def hasBuildExtras = file('build-extras.gradle').exists()
