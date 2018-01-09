@@ -15,29 +15,44 @@ $$(document).on('deviceready', function() {
 });
 
 myApp.onPageInit('premios', function (page) {
+  var fecha = ['1990-01-02'];
   var calendarDateFormat = myApp.calendar({
       dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'],
       monthNames:	['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto' , 'Septiembre' , 'Octubre', 'Noviembre', 'Diciembre'],
       input: '#calendar-date-format',
       minDate:'1940-01-01',
       maxDate:'2012-01-01',
-      value: ['1990-01-02'],
+      value: fecha,
       dateFormat: 'dd-MM-yyyy'
+  });
+
+  $$("#campoMunicipio").hide();
+  var municipio = $$("#municipio").val();
+
+  $$("#municipio").change(function(){
+    municipio = $$("#municipio").val();
+    if(municipio == "Otro"){
+      $$("#campoMunicipio").show();
+      $$("#txtMunicipio").attr('required', true);
+    }else{
+      $$("#campoMunicipio").hide();
+      $$('#txtMunicipio').removeAttr('required');
+    }
   });
 
   $$("#myform").submit(function(e) {
     e.preventDefault();
+    municipio = (municipio == "Otro") ? $$('#txtMunicipio').val() : municipio;
     var datos = [];
     var intereses = [];
     var chk = $$("input[name='my-checkbox[]']:checked");
+    $$("input[name='my-radio']:checked")[0].value;
+    if(chk.length>0){
     for (var i = 0; i < chk.length; i++) {
       intereses.push(chk[i].value);
     }
-    var genero = "Hombre";
-    if($$("#genero").prop('checked')){
-      genero = "Mujer";
-    }
-    datos.push(genero, $$("#nombre").val(), $$("#correo").val(), $$("#telefono").val(), $$("#calendar-date-format").val(), intereses);
+    var genero = $$("input[name='my-radio']:checked")[0].value;
+    datos.push(genero, $$("#nombre").val(), $$("#apeP").val(), $$("#apeM").val(), $$("#correo").val(), $$("#telefono").val(), $$("#calendar-date-format").val(), intereses, municipio);
     $$.ajax({
       type: "POST",
       url: "http://apps.opion-tech.com/correoPremios.php",
@@ -51,11 +66,17 @@ myApp.onPageInit('premios', function (page) {
         $$("#body").append("<div id='loading' class='content-block' style='text-align: center'><span style='width:42px; height:42px' class='preloader'></span><h4>Espera por favor...</h4></div>");
       },
       success: function(response) {
-        myApp.alert("Te suscribiste exitosamente", "MarcaGto");
-        $$("#myform")[0].reset();
+        if(response == "existe"){
+          myApp.alert("Ese correo ya fue registrado", "Marca GTO");
+        }else{
+          myApp.alert("Te suscribiste exitosamente", "Marca GTO");
+          $$("#myform")[0].reset();
+          $$("#hombre").prop('checked', true);
+          $$("#calendar-date-format").val(fecha);
+        }
       },
       error: function(error) {
-        myApp.alert("Ocurrió un error, intenta de nuevo", "MarcaGto");
+        myApp.alert("Ocurrió un error, intenta de nuevo", "Marca GTO");
       },
       complete: function() {
         $$("#loading").remove();
@@ -63,14 +84,45 @@ myApp.onPageInit('premios', function (page) {
         $$("#headerPremios").show();
       }
     });
-  });
+  }else {
+    myApp.alert("Selecciona tus intereses", "Marca GTO");
+  }
+});
 });
 
 myApp.onPageInit('contacto', function (page) {
+  $$("#campoMunicipio").hide();
+  $$("#campoTelefono").hide();
+  var municipio = $$("#municipio").val();
+  var asunto = $$("#asunto").val();
+  var telefono = "";
+  $$("#municipio").change(function(){
+    municipio = $$("#municipio").val();
+    if(municipio == "Otro"){
+      $$("#campoMunicipio").show();
+      $$("#txtMunicipio").attr('required', true);
+    }else{
+      $$("#campoMunicipio").hide();
+      $$('#txtMunicipio').removeAttr('required');
+    }
+  });
+  $$("#asunto").change(function(){
+    asunto = $$("#asunto").val();
+    if(asunto == "Queja"){
+      $$("#campoTelefono").show();
+      $$("#txtTelefono").attr('required', true);
+    }else{
+      $$("#campoTelefono").hide();
+      $$('#txtTelefono').val('');
+      $$('#txtTelefono').removeAttr('required');
+    }
+  });
   $$("#myform").submit(function(e) {
+    municipio = (municipio == "Otro") ? $$('#txtMunicipio').val() : municipio;
+    telefono = $$("#txtTelefono").val();
     e.preventDefault();
     var datos = [];
-    datos.push($$("#nombre").val(), $$("#correo").val(), $$("#asunto").val(), $$("#mensaje").val());
+    datos.push($$("#nombre").val(), $$("#apeP").val(), $$("#apeM").val(), $$("#correo").val(), $$("#asunto").val(), $$("#mensaje").val(), municipio, telefono);
     $$.ajax({
       type: "POST",
       url: "http://apps.opion-tech.com/correoGto.php",
@@ -80,18 +132,20 @@ myApp.onPageInit('contacto', function (page) {
       },
       beforeSend: function() {
         $$("#myform").hide();
+        $$("#headerContacto").hide();
         $$("#body").append("<div id='loading' class='content-block' style='text-align: center'><span style='width:42px; height:42px' class='preloader'></span><h4>Espera por favor...</h4></div>");
       },
       success: function(response) {
-        myApp.alert("El correo se envió exitosamente", "MarcaGto");
+        myApp.alert("El correo se envió exitosamente", "Marca GTO");
         $$("#myform")[0].reset();
       },
       error: function(error) {
-        myApp.alert("Ocurrió un error, intenta de nuevo", "MarcaGto")
+        myApp.alert("Ocurrió un error, intenta de nuevo", "Marca GTO")
       },
       complete: function() {
         $$("#loading").remove();
         $$("#myform").show();
+        $$("#headerContacto").show();
       }
     });
   });
@@ -146,7 +200,7 @@ function checkPermissions(){
 
 function error() {
   myApp.addNotification({
-    title: 'MarcaGto',
+    title: 'Marca GTO',
     message: 'Te recomendamos dar permisos para acceder a tu ubicación'
   });
 }

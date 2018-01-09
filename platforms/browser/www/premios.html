@@ -6,7 +6,7 @@
               <span class="letraazul">Ba</span>
           </a>
       </div>
-        <div class="center sliding">Premios</div>
+        <div class="center sliding">Suscripción</div>
         <div class="right">
           <!--  <a href="#" class="link icon-only open-panel"><i class="icon icon-bars color-white"></i></a>-->
         </div>
@@ -23,14 +23,28 @@
         <ul>
           <li>
             <div class="item-content">
-              <div class="item-inner">
-                <div class="item-title label der">Hombre</div>
-                  <label class="label-switch">
-                    <input type="checkbox" id="genero">
-                    <div class="checkbox"></div>
-                  </label>
-                <div class="item-title label izq">Mujer</div>
-              </div>
+              <label class="label-checkbox item-content fullwidth">
+                <input type="radio" name="my-radio" value="Hombre" id="hombre" checked>
+                <div class="item-media">
+                  <i class="icon icon-form-checkbox"></i>
+                </div>
+                <div class="item-inner">
+                  <div class="item-title">Hombre</div>
+                </div>
+              </label>
+            </div>
+          <!--</li>
+          <li>-->
+            <div class="item-content">
+              <label class="label-checkbox item-content fullwidth">
+                <input type="radio" name="my-radio" value="Mujer">
+                <div class="item-media">
+                  <i class="icon icon-form-checkbox"></i>
+                </div>
+                <div class="item-inner">
+                  <div class="item-title">Mujer</div>
+                </div>
+              </label>
             </div>
           </li>
           <li>
@@ -46,6 +60,94 @@
           <li>
             <div class="item-content">
               <div class="item-inner">
+                <div class="item-title label">Ap. Paterno</div>
+                <div class="item-input">
+                  <input type="text" placeholder="Apellido Paterno" id="apeP" required>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content">
+              <div class="item-inner">
+                <div class="item-title label">Ap. Materno</div>
+                <div class="item-input">
+                  <input type="text" placeholder="Apellido Materno" id="apeM">
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a href="#" class="item-link smart-select" data-open-in="popup" data-popup-close-text="   ">
+              <select name="municipio" id="municipio">
+                <option value="Otro">Otro</option>
+                <option value="Abasolo">Abasolo</option>
+                <option value="Acámbaro">Acámbaro</option>
+                <option value="Apaseo el Alto">Apaseo el Alto</option>
+                <option value="Apaseo el Grande">Apaseo el Grande</option>
+                <option value="Atarjea">Atarjea</option>
+                <option value="Celaya">Celaya</option>
+                <option value="Comonfort">Comonfort</option>
+                <option value="Coroneo">Coroneo</option>
+                <option value="Cortazar">Cortazar</option>
+                <option value="Cuerámaro">Cuerámaro</option>
+                <option value="Dolores Hidalgo">Dolores Hidalgo</option>
+                <option value="Doctor Mora">Doctor Mora</option>
+                <option value="Guanajuato">Guanajuato</option>
+                <option value="Huanímaro">Huanímaro</option>
+                <option value="Irapuato">Irapuato</option>
+                <option value="Jaral del Progreso">Jaral del Progreso</option>
+                <option value="Jerécuaro">Jerécuaro</option>
+                <option value="León" selected>León</option>
+                <option value="Manuel Doblado">Manuel Doblado</option>
+                <option value="Moroleón">Moroleón</option>
+                <option value="Ocampo">Ocampo</option>
+                <option value="Pénjamo">Pénjamo</option>
+                <option value="Pueblo Nuevo">Pueblo Nuevo</option>
+                <option value="Purísima del Rincón">Purísima del Rincón</option>
+                <option value="Romita">Romita</option>
+                <option value="Salamanca">Salamanca</option>
+                <option value="Salvatierra">Salvatierra</option>
+                <option value="San Diego de la Unión">San Diego de la Unión</option>
+                <option value="San Felipe">San Felipe</option>
+                <option value="San Francisco del Rincón">San Francisco del Rincón</option>
+                <option value="San José Iturbide">San José Iturbide</option>
+                <option value="San Luis de la Paz">San Luis de la Paz</option>
+                <option value="San Miguel de Allende">San Miguel de Allende</option>
+                <option value="Santa Catarina">Santa Catarina</option>
+                <option value="Santa Cruz de Juventino Rosas">Santa Cruz de Juventino Rosas</option>
+                <option value="Santiago Maravatío">Santiago Maravatío</option>
+                <option value="Silao">Silao</option>
+                <option value="Tarandacuao">Tarandacuao</option>
+                <option value="Tarimoro">Tarimoro</option>
+                <option value="Tierra Blanca">Tierra Blanca</option>
+                <option value="Uriangato">Uriangato</option>
+                <option value="Valle de Santiago">Valle de Santiago</option>
+                <option value="Victoria">Victoria</option>
+                <option value="Villagrán">Villagrán</option>
+                <option value="Xichú">Xichú</option>
+                <option value="Yuriria">Yuriria</option>
+              </select>
+              <div class="item-content">
+                <div class="item-inner">
+                  <div class="item-title">Municipio</div>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li id="campoMunicipio">
+            <div class="item-content">
+              <div class="item-inner">
+                <div class="item-input">
+                  <input type="text" placeholder="Tu municipio" id="txtMunicipio">
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+          <li>
+            <div class="item-content">
+              <div class="item-inner">
                 <div class="item-title label">Correo</div>
                 <div class="item-input">
                   <input type="email" name="correo" placeholder="Tu correo" id="correo" required>
@@ -58,7 +160,7 @@
               <div class="item-inner">
                 <div class="item-title label">Teléfono</div>
                 <div class="item-input">
-                  <input type="tel" name="telephone" placeholder="Tu teléfono" id="telefono">
+                  <input type="tel" placeholder="(Opcional)" id="telefono">
                 </div>
               </div>
             </div>

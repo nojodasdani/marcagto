@@ -1,8 +1,8 @@
 {
   "background_color": "#FFF",
   "display": "standalone",
-  "name": "MarcaGto",
-  "short_name": "MarcaGto",
+  "name": "MarcaGTO",
+  "short_name": "MarcaGTO",
   "version": "com.proxtopic.marcagto",
   "description": "A sample Apache Cordova application that responds to the deviceready event.",
   "author": "Apache Cordova Team",
