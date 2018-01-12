@@ -31,6 +31,15 @@ module.exports = [
     "runs": true
   },
   {
+    "id": "cordova-plugin-inappbrowser.inappbrowser",
+    "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+    "pluginId": "cordova-plugin-inappbrowser",
+    "clobbers": [
+      "cordova.InAppBrowser.open",
+      "window.open"
+    ]
+  },
+  {
     "id": "cordova.plugins.diagnostic.Diagnostic",
     "file": "plugins/cordova.plugins.diagnostic/www/android/diagnostic.js",
     "pluginId": "cordova.plugins.diagnostic",
@@ -42,11 +51,12 @@ module.exports = [
 module.exports.metadata = 
 // TOP OF METADATA
 {
-  "cordova-plugin-whitelist": "1.3.3",
   "com.innoquant.moca.phonegap": "2.6.0",
   "cordova-android-play-services-gradle-release": "1.1.4",
   "cordova-plugin-android-permissions": "1.0.0",
   "cordova-plugin-geolocation": "3.0.0",
+  "cordova-plugin-inappbrowser": "2.0.1",
+  "cordova-plugin-whitelist": "1.3.3",
   "cordova.plugins.diagnostic": "3.8.1"
 };
 // BOTTOM OF METADATA

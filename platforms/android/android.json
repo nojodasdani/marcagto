@@ -5,24 +5,6 @@
   },
   "config_munge": {
     "files": {
-      "res/xml/config.xml": {
-        "parents": {
-          "/*": [
-            {
-              "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
-              "count": 1
-            },
-            {
-              "xml": "<feature name=\"Permissions\"><param name=\"android-package\" value=\"com.android.plugins.Permissions\" /></feature>",
-              "count": 1
-            },
-            {
-              "xml": "<feature name=\"Geolocation\"><param name=\"android-package\" value=\"org.apache.cordova.geolocation.Geolocation\" /></feature>",
-              "count": 1
-            }
-          ]
-        }
-      },
       "config.xml": {
         "parents": {
           "/widget": [
@@ -91,19 +73,19 @@
               "count": 1
             },
             {
-              "xml": "<uses-permission android:name=\"com.example.hello.permission.C2D_MESSAGE\" />",
+              "xml": "<uses-permission android:name=\"com.proxtopic.marcagto.permission.C2D_MESSAGE\" />",
               "count": 1
             },
             {
-              "xml": "<permission android:name=\"com.example.hello.permission.C2D_MESSAGE\" android:protectionLevel=\"signature\" />",
+              "xml": "<permission android:name=\"com.proxtopic.marcagto.permission.C2D_MESSAGE\" android:protectionLevel=\"signature\" />",
               "count": 1
             },
             {
-              "xml": "<permission android:name=\"com.example.hello.permission.MOCA_DATA\" android:protectionLevel=\"signature\" />",
+              "xml": "<permission android:name=\"com.proxtopic.marcagto.permission.MOCA_DATA\" android:protectionLevel=\"signature\" />",
               "count": 1
             },
             {
-              "xml": "<uses-permission android:name=\"com.example.hello.permission.MOCA_DATA\" />",
+              "xml": "<uses-permission android:name=\"com.proxtopic.marcagto.permission.MOCA_DATA\" />",
               "count": 1
             }
           ],
@@ -160,28 +142,53 @@
             }
           ]
         }
+      },
+      "res/xml/config.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<feature name=\"Permissions\"><param name=\"android-package\" value=\"com.android.plugins.Permissions\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"Geolocation\"><param name=\"android-package\" value=\"org.apache.cordova.geolocation.Geolocation\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+              "count": 1
+            }
+          ]
+        }
       }
     }
   },
   "installed_plugins": {
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.example.hello"
-    },
     "com.innoquant.moca.phonegap": {
-      "PACKAGE_NAME": "com.example.hello"
+      "PACKAGE_NAME": "com.proxtopic.marcagto"
     },
     "cordova-android-play-services-gradle-release": {
       "PLAY_SERVICES_VERSION": "11.+",
-      "PACKAGE_NAME": "com.example.hello"
+      "PACKAGE_NAME": "com.proxtopic.marcagto"
     },
     "cordova-plugin-android-permissions": {
-      "PACKAGE_NAME": "com.example.hello"
+      "PACKAGE_NAME": "com.proxtopic.marcagto"
     },
     "cordova-plugin-geolocation": {
-      "PACKAGE_NAME": "com.example.hello"
+      "PACKAGE_NAME": "com.proxtopic.marcagto"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.proxtopic.marcagto"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.proxtopic.marcagto"
     },
     "cordova.plugins.diagnostic": {
-      "PACKAGE_NAME": "com.proxtopic.ferialeon"
+      "PACKAGE_NAME": "com.proxtopic.marcagto"
     }
   },
   "dependent_plugins": {},
@@ -217,6 +224,15 @@
       "runs": true
     },
     {
+      "id": "cordova-plugin-inappbrowser.inappbrowser",
+      "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+      "pluginId": "cordova-plugin-inappbrowser",
+      "clobbers": [
+        "cordova.InAppBrowser.open",
+        "window.open"
+      ]
+    },
+    {
       "id": "cordova.plugins.diagnostic.Diagnostic",
       "file": "plugins/cordova.plugins.diagnostic/www/android/diagnostic.js",
       "pluginId": "cordova.plugins.diagnostic",
@@ -226,11 +242,12 @@
     }
   ],
   "plugin_metadata": {
-    "cordova-plugin-whitelist": "1.3.3",
     "com.innoquant.moca.phonegap": "2.6.0",
     "cordova-android-play-services-gradle-release": "1.1.4",
     "cordova-plugin-android-permissions": "1.0.0",
     "cordova-plugin-geolocation": "3.0.0",
+    "cordova-plugin-inappbrowser": "2.0.1",
+    "cordova-plugin-whitelist": "1.3.3",
     "cordova.plugins.diagnostic": "3.8.1"
   }
 }

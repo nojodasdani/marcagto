@@ -7,24 +7,27 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.example.hello"
-    },
     "com.innoquant.moca.phonegap": {
-      "PACKAGE_NAME": "com.example.hello"
+      "PACKAGE_NAME": "com.proxtopic.marcagto"
     },
     "cordova-android-play-services-gradle-release": {
       "PLAY_SERVICES_VERSION": "11.+",
-      "PACKAGE_NAME": "com.example.hello"
+      "PACKAGE_NAME": "com.proxtopic.marcagto"
     },
     "cordova-plugin-android-permissions": {
-      "PACKAGE_NAME": "com.example.hello"
+      "PACKAGE_NAME": "com.proxtopic.marcagto"
     },
     "cordova-plugin-geolocation": {
-      "PACKAGE_NAME": "com.example.hello"
+      "PACKAGE_NAME": "com.proxtopic.marcagto"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.proxtopic.marcagto"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.proxtopic.marcagto"
     },
     "cordova.plugins.diagnostic": {
-      "PACKAGE_NAME": "com.proxtopic.ferialeon"
+      "PACKAGE_NAME": "com.proxtopic.marcagto"
     }
   },
   "dependent_plugins": {}
