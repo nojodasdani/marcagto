@@ -17,7 +17,7 @@
  under the License.
  */
 //
-// Prefix header for all source files of the 'MarcaGto' target in the 'MarcaGto' project
+// Prefix header for all source files of the 'MarcaGTO' target in the 'MarcaGTO' project
 //
 
 #ifdef __OBJC__

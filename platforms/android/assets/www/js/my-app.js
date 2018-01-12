@@ -88,7 +88,7 @@ myApp.onPageInit('premios', function (page) {
     myApp.alert("Selecciona tus intereses", "Marca GTO");
   }
 });
-});
+})
 
 myApp.onPageInit('contacto', function (page) {
   $$("#campoMunicipio").hide();
@@ -169,6 +169,13 @@ myApp.onPageInit('mapa', function (page) {
 })
 
 function checkBluetooth(){
+  myApp.addNotification({
+    title: 'MarcaGTO',
+    message: 'Enciende tu Bluetooth para una mejor experiencia'
+  });
+}
+
+/*function checkBluetooth(){
   cordova.plugins.diagnostic.isBluetoothEnabled(function(enabled){
     if (!enabled) {
       myApp.confirm('¿Podemos encender tu Bluetooth?', '', function () {
@@ -187,7 +194,7 @@ function turnBluetooth(){
   }, function(error){
       myApp.alert("Ocurrió un error, enciéndelo manualmente por favor");
   }, true);
-}
+}*/
 
 function checkPermissions(){
   var permissions = cordova.plugins.permissions;
@@ -200,7 +207,7 @@ function checkPermissions(){
 
 function error() {
   myApp.addNotification({
-    title: 'Marca GTO',
+    title: 'MarcaGTO',
     message: 'Te recomendamos dar permisos para acceder a tu ubicación'
   });
 }
