@@ -10,6 +10,20 @@
    See https://github.com/apache/cordova-plugin-statusbar
 */
 
+.containerframe3 {
+    position: absolute;
+    margin-top: 2%;
+     width: 100%;
+     height: 95%;
+ }
+
+.containerframe2 {
+    position: relative;
+    margin-top: 2%;
+     width: 100%;
+     height: 42%;
+ }
+
 .containerframe {
     position: relative;
     margin-top: 0%;
