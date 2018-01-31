@@ -1,28 +1,28 @@
 {
-  "_from": "cordova-android-play-services-gradle-release",
-  "_id": "cordova-android-play-services-gradle-release@1.1.4",
+  "_from": "cordova-android-play-services-gradle-release@^1.1.4",
+  "_id": "cordova-android-play-services-gradle-release@1.2.0",
   "_inBundle": false,
-  "_integrity": "sha1-AbA0SpIlqc6P34PmcL0yK+ynyvY=",
+  "_integrity": "sha1-DKPuch9BzZeHua6CPmOjtKr/Cag=",
   "_location": "/cordova-android-play-services-gradle-release",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
+    "type": "range",
     "registry": true,
-    "raw": "cordova-android-play-services-gradle-release",
+    "raw": "cordova-android-play-services-gradle-release@^1.1.4",
     "name": "cordova-android-play-services-gradle-release",
     "escapedName": "cordova-android-play-services-gradle-release",
-    "rawSpec": "",
+    "rawSpec": "^1.1.4",
     "saveSpec": null,
-    "fetchSpec": "latest"
+    "fetchSpec": "^1.1.4"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/cordova-android-play-services-gradle-release/-/cordova-android-play-services-gradle-release-1.1.4.tgz",
-  "_shasum": "01b0344a9225a9ce8fdf83e670bd322beca7caf6",
-  "_spec": "cordova-android-play-services-gradle-release",
-  "_where": "C:\\Users\\danie\\Documents\\hello",
+  "_resolved": "https://registry.npmjs.org/cordova-android-play-services-gradle-release/-/cordova-android-play-services-gradle-release-1.2.0.tgz",
+  "_shasum": "0ca3ee721f41cd9787b9ae823e63a3b4aaff09a8",
+  "_spec": "cordova-android-play-services-gradle-release@^1.1.4",
+  "_where": "C:\\Users\\danie\\Documents\\MarcaGto",
   "author": {
     "name": "Dave Alden"
   },
@@ -35,5 +35,5 @@
   "devDependencies": {},
   "license": "MIT",
   "name": "cordova-android-play-services-gradle-release",
-  "version": "1.1.4"
+  "version": "1.2.0"
 }

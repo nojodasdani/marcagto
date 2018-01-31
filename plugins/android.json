@@ -7,9 +7,6 @@
     "files": {}
   },
   "installed_plugins": {
-    "com.innoquant.moca.phonegap": {
-      "PACKAGE_NAME": "com.proxtopic.marcagto"
-    },
     "cordova-android-play-services-gradle-release": {
       "PLAY_SERVICES_VERSION": "11.+",
       "PACKAGE_NAME": "com.proxtopic.marcagto"
@@ -27,6 +24,9 @@
       "PACKAGE_NAME": "com.proxtopic.marcagto"
     },
     "cordova.plugins.diagnostic": {
+      "PACKAGE_NAME": "com.proxtopic.marcagto"
+    },
+    "com.innoquant.moca.phonegap": {
       "PACKAGE_NAME": "com.proxtopic.marcagto"
     }
   },

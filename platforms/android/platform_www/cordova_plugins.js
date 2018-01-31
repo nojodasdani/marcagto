@@ -1,14 +1,6 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
   {
-    "id": "com.innoquant.moca.phonegap.MOCA",
-    "file": "plugins/com.innoquant.moca.phonegap/www/MOCA.js",
-    "pluginId": "com.innoquant.moca.phonegap",
-    "clobbers": [
-      "MOCA"
-    ]
-  },
-  {
     "id": "cordova-plugin-android-permissions.Permissions",
     "file": "plugins/cordova-plugin-android-permissions/www/permissions.js",
     "pluginId": "cordova-plugin-android-permissions",
@@ -46,18 +38,26 @@ module.exports = [
     "clobbers": [
       "cordova.plugins.diagnostic"
     ]
+  },
+  {
+    "id": "com.innoquant.moca.phonegap.MOCA",
+    "file": "plugins/com.innoquant.moca.phonegap/www/MOCA.js",
+    "pluginId": "com.innoquant.moca.phonegap",
+    "clobbers": [
+      "MOCA"
+    ]
   }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
-  "com.innoquant.moca.phonegap": "2.6.0",
-  "cordova-android-play-services-gradle-release": "1.1.4",
+  "cordova-android-play-services-gradle-release": "1.2.0",
   "cordova-plugin-android-permissions": "1.0.0",
   "cordova-plugin-geolocation": "3.0.0",
-  "cordova-plugin-inappbrowser": "2.0.1",
+  "cordova-plugin-inappbrowser": "2.0.2",
   "cordova-plugin-whitelist": "1.3.3",
-  "cordova.plugins.diagnostic": "3.8.1"
+  "cordova.plugins.diagnostic": "3.8.1",
+  "com.innoquant.moca.phonegap": "2.6.2"
 };
 // BOTTOM OF METADATA
 });
